@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "ordercomplete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+</head>
+<body>
+
+    <style>
+
+        .error-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+
+        .error-action {
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+
+            .error-action.btn {
+                margin-right: 10px;
+            }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+                <br />
+
+                <div class="error-template">
+                    <h1 class="col-form-label  col-form-label-lg rounded-circle " style="font-size:50px;color:white;padding:10px; background-color:#f4a6aa;">Payment has been  successfully done</h1>
+                    <br />
+                    <br />
+                    <div class="error-action" style="margin-top:200px">
+                        <a href="@Url.Action("Index","Home")" class="btn  btn-lg btn-outline-dark" style="margin:50px;font-size:50px;">
+                            <span class="glyphicon glyphicon-home"></span>
+                            Take me Home
+                        </a><a href="../Home/Contact" class="btn  btn-lg btn-outline-danger " style="margin:50px;font-size:50px;">
+                            <span class="glyphicon glyphicon-home"></span>
+                            Contact Support
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

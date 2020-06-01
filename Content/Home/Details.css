@@ -1,0 +1,48 @@
+﻿
+.product {
+    margin: 5%;
+}
+
+
+.product-img {
+    border: solid;
+    border-radius: 20px 20px;
+    color: #f4a6aa;
+}
+
+
+.price {
+    font-size: 36px;
+    color: #f4a6aa;
+    font-weight: 700;
+    margin: 0px;
+    margin-bottom: 0px;
+    margin-bottom: 15px;
+}
+
+
+
+.form-control {
+    width: 100px;
+    height: 100px;
+    margin-right: 40px;
+}
+
+.btn-cart {
+    background-color: #f4a6aa;
+    color: white;
+    width: 300px;
+    font-size: x-large;
+}
+
+.btn-wishist {
+    width: 300px;
+    font-size: large;
+    margin-left: 100px;
+}
+
+.pink-line {
+    height: 2px;
+    background: #f4a6aa;
+    margin: 25px 0px;
+}

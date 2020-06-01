@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNet.Identity
+
+
+
+<head>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <ul class="navbar-nav mr-auto ">
+
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()"
+                   style="margin-left:20px;font-size:25px;color:white;font-family:Arial Narrow;">Log out</a>
+            </li>
+        </ul>
+    }
+}
+else
+{
+
+
+
+
+    <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item dropdown">
+            <form>
+                <a class="nav-link" href="../Home/Shop" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left:20px;font-size:35px;color:white;">
+                    <i class="fas fa-user"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../Account/Register">Create Account</a>
+                    <a class="dropdown-item" href="../Account/Login">Login</a>
+                    <a class="dropdown-item" href="../Manage/ChangPassword">Change Paasword</a>
+                </div>
+            </form>
+        </li>
+
+
+
+    </ul>
+
+
+}

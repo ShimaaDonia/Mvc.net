@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/AdminLayoutPage.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+
+    <div class="container-fluid">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="../Admin/Dahboard">Dashboard</a></li>
+            <li class="breadcrumb-item active">Roles</li>
+        </ol>
+
+        <div class="card border-danger mb-3" style="max-width:40rem">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+                Add Role
+            </div>
+            <div class="card-body">
+
+
+                <div class="container">
+                    <form action="" class="was-validated">
+                        <div class="form-group">
+                            <label for="uname">Role Name </label>
+                            <input type="text" class="form-control" name="rolename" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+}
+

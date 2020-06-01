@@ -1,0 +1,44 @@
+﻿@model IEnumerable<E_CommerceProject.Models.Product>
+<head>
+    <link href="~/Content/Showproduct.css" rel="stylesheet" />
+</head>
+
+
+
+<div class="container-fluid">
+    <div class="card-deck ">
+        <div class="row  ">
+            @foreach (var item in Model)
+            {
+                <div class="card  col-md-3 shadow-sm ">
+                    <a href="../Home/ProductDetails/@item.ID"><img src="~/Content/AdminStyle/ProducImages/@item.ProductImage" style="height:400px" alt="Photo of sunset"></a>
+                    <a href="../Home/productDetails/@item.ID" style="text-decoration:none;color:black;">
+                        <h5 class="card-title">@item.Name</h5>
+                    </a>
+                    <span class="d-flex">
+                        <span class="card-text"> <i class="fas fa-dollar-sign"></i>@item.Price</span>
+
+                        @if (item.Quantity > 0)
+                        {
+
+
+                            using (Html.BeginForm("AddToCart", "Home", new { productID = item.ID }, FormMethod.Post))
+                            {
+                                <span><button type="submit" class=" link-trach rounded-circle btn-lg"  style=" border:hidden;"><i  class="fa fa-shopping-cart trach-icon"></i></button></span>
+                            }
+                        }
+                        else
+                        {
+
+                            <span> Not Available</span>
+                        }
+                    </span>
+
+                </div>
+
+
+            }
+        </div>
+    </div>
+</div>
+

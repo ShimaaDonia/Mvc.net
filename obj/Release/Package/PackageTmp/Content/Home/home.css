@@ -1,0 +1,151 @@
+﻿.services {
+    font-size: 30px;
+    color: #f4a6aa;
+    font-weight: 700;
+    line-height: 70px;
+    margin: 0px;
+}
+
+.service-link {
+    font-size: 18px;
+    color: #f4a6aa;
+    font-weight: 700;
+    line-height: 30px;
+    margin: 0px;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.magnitude-sales {
+    padding-bottom: 80px;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.magnitude {
+    background: url('Index/girl1.jpg') no-repeat right bottom;
+    
+}
+.sales {
+   
+    background: #fbf1f2 url('Index/women-bag.png') no-repeat right bottom;
+    background: #fbf1f2 url('Index/women-bag.png') no-repeat right bottom;
+}
+.magnitude, .sales {
+    padding: 20px 160px 20px 25px;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.35);
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.35);
+    box-sizing: border-box;
+}
+.magnitude-sales h2 {
+    font-size: 30px;
+    color: #f4a6aa;
+    font-weight: 700;
+}
+
+
+.magnitude-sales a {
+    text-decoration: none;
+    width: 156px;
+    color: #121212;
+    font-weight: 400;
+    margin-top: 25px;
+}
+
+.button {
+    display: block;
+    background: #f4a6aa;
+    color: #FFF;
+    font-size: 18px;
+    width: 100%;
+    line-height: 65px;
+    height: 70px;
+    font-weight: 700;
+    border: none;
+    text-align: center;
+}
+
+
+.search-link a {
+    text-align:center;
+    margin-left: 20px;
+    color: #f4a6aa;
+    font-size: 18px;
+    text-decoration-line:none;
+}
+
+
+
+.entetainment-bloc {
+    background: #f4a6aa;
+    color: #FFF;
+    margin-top: 48px;
+}
+
+.container2 {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.entetainment-bloc .row > div:first-child img {
+    margin-top: -40px;
+}
+
+.col-sm-6 {
+    margin-top:10px;
+    width: 50%;
+    float: left;
+}
+
+.entetainment-bloc .button {
+    background: #eb767c;
+    width: 222px;
+    height: 75px;
+    line-height: 75px;
+    margin-top: 40px;
+}
+
+
+
+
+.Car-caption {
+    margin-bottom: 150px;
+}
+
+/* Styles for wrapping the search box */
+
+.search-box {
+    width: 50%;
+    margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}

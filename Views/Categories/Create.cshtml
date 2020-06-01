@@ -1,0 +1,52 @@
+﻿@model E_CommerceProject.Models.Category
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/AdminLayoutPage.cshtml";
+}
+
+    <div class="container-fluid">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="../Admin/Dahboard">Dashboard</a></li>
+            <li class="breadcrumb-item ">Categories</li>
+            <li class="breadcrumb-item active">Add New Category</li>
+        </ol>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+                Add New Category
+            </div>
+            <div class="card-body">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+
+                <div class="form-horizontal">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CategoryName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <a onclick="window.history.back();" class="btn btn-danger">Cancel</a>
+                            <input type="submit" value="save" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+        

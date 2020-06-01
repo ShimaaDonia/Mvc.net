@@ -1,0 +1,85 @@
+﻿
+
+
+.link-trach {
+    background-color: #f4a6aa;
+    color: white;
+    margin-left: 40px;
+}
+
+.trach-icon {
+    color: white;
+    border: hidden;
+}
+
+
+.col-md-3 {
+    width: 25%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.card-deck img {
+    width: 100%;
+    margin-bottom: 18px;
+    vertical-align: middle;
+}
+
+.col-sm-6 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+.card {
+    padding: 15px;
+    transition: 0.7s;
+    cursor: pointer;
+}
+
+.card-deck {
+    margin: 10px;
+}
+
+.card-text {
+    font-size: 2rem;
+    transition: 1s;
+    cursor: pointer;
+    color: #f4a6aa;
+}
+
+.card-title {
+    font-style: italic;
+    transition: 1s;
+    cursor: pointer;
+}
+
+    .card-title i:hover {
+        transform: scale(1.25) rotate(100deg);
+        color: #18d4ca;
+    }
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 20px 20px 15px rgba(0,0,0,0.3);
+    display: block;
+}
+
+
+
+.card::before {
+    transform-origin: left top;
+}
+
+.card::after {
+    transform-origin: right bottom;
+}
+
+.card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+    transform: scale3d(2, 2, 2);
+}

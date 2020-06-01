@@ -1,0 +1,145 @@
+﻿@using E_CommerceProject.Models
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+
+
+    <link href="~/Content/Home/AddToChart.css" rel="stylesheet" />
+
+</head>
+
+<br />
+<br />
+<br />
+<br />
+
+
+@if ((List<ProductDTO>)Session["cart"] == null)
+{
+
+    <div class="alert alert-danger">
+        <strong>No Products added to your cart!</strong>
+    </div>
+
+}else
+{ 
+<div class="pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 p-5 bg-white rounded shadow-lg mb-5">
+
+                <!-- Shopping cart table -->
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="p-2 px-3 text-uppercase">Product</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Price</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Quantity</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">SubTotal</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @{double totalBill = 0;
+                                }
+                            @foreach (var item in (List<ProductDTO>)Session["cart"])
+                            {
+                                double totalPrice = @item.Price * @item.QuantityInOrder;
+                                totalBill += totalPrice;
+                               
+                                <tr>
+                                    <th scope="row" class="border-0">
+                                        <div class="p-2">
+                                           <img src="~/Content/AdminStyle/ProducImages/@item.ProductImage" alt="" width="200" class="img-fluid rounded shadow-sm">
+                                            <div class="ml-3 d-inline-block align-middle">
+                                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle ">@item.Name</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: @item.Categ</span>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <td class="border-0 align-middle"><strong>@item.Price</strong></td>
+                                    <td class="border-0 align-middle">
+                                        <strong style="border:solid; padding:10px;margin:10px;float:left;border-color:#f4a6aa;color:#f4a6aa">@item.QuantityInOrder </strong>
+                                        &nbsp;
+                                        &nbsp;
+
+                                        <p>
+                                            <a href="@Url.Action("AddToCart","home",new{productID=item.ID,caller=2})">
+                                                <i class="fa fa-plus btn-sm" style="background-color:#f4a6aa;text-decoration:none;color:white;"></i>
+                                            </a>
+                                        </p><p>
+                                            <a href="@Url.Action("RemoveFromCart","home",new{productID=item.ID})">
+                                                <i class="fa fa-minus btn-sm" style="background-color:#f4a6aa;text-decoration:none;color:white;"></i>
+                                            </a>
+                                        </p>
+                                        
+                                    </td>
+                                    <td class="border-0 align-middle"><p class="text-dark link-trach">$ @totalPrice</p></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- End -->
+            </div>
+        </div>
+
+
+        <div class="row cart-buttons">
+           
+            <div class="col-sm-3">
+                <a href="../home/index" style="color:white;text-decoration:none" class="button btn-block">CONTINUE SHOPPING</a>
+            </div>
+            <div class="col-sm-3 col-sm-offset-3">
+                <a href="../home/ClearCart" style="color:white;text-decoration:none" class="button btn-block ">CLEAR CART</a>
+            </div>
+        </div>
+        <br /><br />
+        <div class="row py-5 p-4 bg-white rounded shadow-lg">
+            <div class="col-lg-6">
+                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Coupon code</div>
+                <div class="p-4">
+                    <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p>
+                    <div class="input-group mb-4 border rounded-pill p-2">
+                        <input type="text" placeholder="Apply coupon" aria-describedby="button-addon3" class="form-control border-0">
+                        <div class="input-group-append border-0">
+                            <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Apply coupon</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instructions for seller</div>
+                <div class="p-4">
+                    <p class="font-italic mb-4">If you have some information for the seller you can leave them in the box below</p>
+                    <textarea name="" cols="30" rows="2" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+                <div class="p-4">
+                    <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$@totalBill</strong></li>
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
+                        <li class="d-flex justify-content-between py-3 border-bottom">
+                            <strong class="text-muted">Total</strong>
+                            <h5 class="font-weight-bold">$@totalBill</h5>
+                        </li>
+                    </ul><a href="../Home/ChecKOut" class="btn  rounded-pill py-2 btn-block btn-lg" style="color:white; background-color: #f4a6aa;">Procceed to checkout</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+}

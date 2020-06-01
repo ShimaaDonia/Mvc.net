@@ -1,0 +1,109 @@
+﻿@model E_CommerceProject.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/AdminLayoutPage.cshtml";
+}
+
+<div class="container-fluid">
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="../Admin/Dahboard">Dashboard</a></li>
+        <li class="breadcrumb-item active">Products</li>
+    </ol>
+
+    <div class="card mb-4 border-danger mb-3" style="max-width:40rem">
+        <div class="card-header">
+            <i class="fas fa-table mr-1"></i>
+            View Product
+        </div>
+        <div class="card-body">
+
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Category.CategoryName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Category.CategoryName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </dt>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Type)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Price)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CreatedDate)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CreatedDate)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ModifiedDate)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ModifiedDate)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Description)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Quantity)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Quantity)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ProductImage)
+                    </dt>
+
+                    <dd>
+                        <img src="~/Content/AdminStyle/ProducImages/@Model.ProductImage" width="200" height="200" />
+                    </dd>
+
+
+
+                </dl>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                   
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-primary"})
+                    <a onclick="window.history.back(); "class="btn btn-danger">Back to list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

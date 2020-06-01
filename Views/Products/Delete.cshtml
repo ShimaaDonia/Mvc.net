@@ -1,0 +1,58 @@
+﻿@model E_CommerceProject.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/AdminLayoutPage.cshtml";
+}
+
+    <div class="container-fluid">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="../Admin/Dahboard">Dashboard</a></li>
+            <li class="breadcrumb-item active">Products</li>
+        </ol>
+
+        <div class="card border-danger mb-3" style="max-width:40rem" >
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+                Delete Product
+            </div>
+            <div class="card-body">
+
+                <h3>Are you sure you want to delete this product?</h3>
+                <div>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Category.CategoryName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Category.CategoryName)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+
+                                <input type="submit" value="Delete" class="btn btn-primary" /> |
+                                <a onclick="window.history.back(); " class="btn btn-danger">Back to list</a>
+                            </div>
+                        </div>
+                    }
+                </div>
+                </div>
+            </div>
+        </div>

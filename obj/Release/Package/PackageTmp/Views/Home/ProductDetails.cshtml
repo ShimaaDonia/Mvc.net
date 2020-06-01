@@ -1,0 +1,120 @@
+﻿@model E_CommerceProject.Models.Product
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!------ Include the above in your HEAD tag ---------->
+    <link href="~/Content/Home/Details.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+
+
+
+
+
+<!--Main layout-->
+<main class="product mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+        <!--Grid row-->
+        <div class="row  ">
+
+            <!--Grid column-->
+            <div class="product-img col-md-6 mb-4 ">
+                <img src="~/Content/AdminStyle/ProducImages/@Model.ProductImage" style="height:100%;width:100%" class="img-fluid" alt="">
+
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-md-6 mb-4">
+
+                <!--Content-->
+                <div class="p-4">
+
+                    <div class="mb-3">
+                        <a href="">
+                            <h1 class="font-weight-bold" style="color:#f4a6aa;">@Model.Name</h1>
+                        </a>
+                    </div>
+
+                    <div class="mb-3">
+                        <h4 class="font-weight-bold" style="">Review Ths Product</h4>
+
+                    </div>
+
+                    <div class="pink-line"><hr /></div>
+
+                    <p class="price">
+
+                        <span>@Model.Price</span>
+                    </p>
+
+
+                    <div class="pink-line"><hr /></div>
+
+                    <p>
+                        @Model.Description
+
+                    </p>
+                    <div class="pink-line"><hr /></div>
+
+
+                    <form class="form-cart d-flex justify-content-left">
+                        <!-- Default input -->
+                        <input type="number" value="1" min="0" max="100" aria-label="Search" class="form-control">
+
+                        @using (Html.BeginForm("AddToCart", "Home", new { productID = Model.ID }, FormMethod.Post))
+                        {
+                            <button class="btn-cart btn  btn-md my-0 p" type="submit">
+                                <i class="fas fa-shopping-cart ml-1"></i>
+                                Add to cart
+
+                            </button>
+                        }
+                        <br /><br />
+
+
+                        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                        {
+                    <button class="btn-wishist btn   btn-md my-0 p" type="submit">
+                        <i class="fa fa-heart-o ml-1"></i>
+                        Back to Home
+
+                    </button>
+                        }
+
+
+                    </form>
+
+                   
+
+                </div>
+                <!--Content-->
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+    </div>
+
+
+    <br />
+    <br />
+
+    <h2 class="font-weight-bold" style="color:#f4a6aa;">DECRIPTION</h2>
+    <p class="">
+       @Model.Description
+    </p>
+    <h1 class="" style="color:#f4a6aa; background-color: #eaeaea; padding:5px;">RELATED PRODUCTS</h1>
+
+</main>
+<!--Main layout-->
+<script>
+    new WOW().init();
+</script>
+
